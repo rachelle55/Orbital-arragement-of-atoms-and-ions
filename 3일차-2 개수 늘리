@@ -1,0 +1,29 @@
+a= int(input())
+orbital = Stack()#Stack 관련 정의 코드는 미리 실행시켜 
+if a==24:
+    print('1s*2 2s*2 2p*6 3s*2 3p*6 4s*1 3d*5')
+if a==29:
+    print('1s*2 2s*2 2p*6 3s*2 3p*6 4s*1 3d*10')
+if a<=37:
+    while a :
+        if 1<=a<3:
+             orbital.push('1s')
+        if 3<=a<5:
+             orbital.push('2s')
+        if 5<=a<11:
+             orbital.push('2p')
+        if 11<=a<13:
+             orbital.push('3s')
+        if 13<=a<19:
+             orbital.push('3p')
+        if 19<=a<21:
+             orbital.push('4s')
+        if 21<=a<31:
+            orbital.push('3d')
+        if 31<=a<37:
+            orbital.push('4p')
+        if a==0:
+            break
+        a=a-1
+while orbital.isEmpty() == False:
+    print(orbital.pop())
