@@ -1,0 +1,6 @@
+a= input()
+orbital = Stack()#Stack 관련 정의 코드는 미리 실행시켜 둠
+for a  in range(1,3)
+	orbital.push(orbital,’1s’)
+현재 오류가 난 상황
+push() takes 2 positional arguments but 3 were given
