@@ -1,0 +1,11 @@
+a= int(input())
+orbital = Stack()#Stack 관련 정의 코드는 미리 실행시켜 둠
+if a<=20:
+    while a :
+        if 1<=a<3:
+             orbital.push('1s')
+        if a==0:
+            break
+        a=a-1
+while orbital.isEmpty() == False:
+    print(orbital.pop())
