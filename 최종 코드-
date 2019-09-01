@@ -1,13 +1,17 @@
-a= int(input())
+a= int(input("원자의 원자번호를 입력해주세요."))
+# 원자의 원래 전자 수를 입력받는다. 
 
-orbital = Stack()#Stack 관련 정의 코드는 미리 실행시켜 둠
-b=input()
+orbital = Stack() #Stack 관련 정의 코드는 미리 실행시켜 둠
+b=input("이온의 가수를 부호를 포함하여 입력해주세요.")
+# 이온의 가수를 입력받아 원자, 이온의 전자수를 최종적으로 결정한다. 
+
 if a==24:
     print('1s*2 2s*2 2p*6 3s*2 3p*6 4s*1 3d*5')
 if a==29:
     print('1s*2 2s*2 2p*6 3s*2 3p*6 4s*1 3d*10')
-else:
+# 전자의 수가 24, 29일 때 3d 오비탈에 예외가 생기는 경우를 미리 설정한다. 
 
+else:
     if b=='+3':
         a=a-3
     if b=='+2':
@@ -23,13 +27,14 @@ else:
     if b=='-3':
         a=a+3
     else: 
-        print('다시 입력해주세요')
+        print("+3부터 -3까지의 숫자 중 부호를 포함하여 다시 입력해주세요.")
 if a==29:
     print('1s*2 2s*2 2p*6 3s*2 3p*6 4s*1 3d*10')
 if a==24:
     print('1s*2 2s*2 2p*6 3s*2 3p*6 4s*1 3d*5')
-if a!=24 and a!=29:
+# 예외적인 전자배치에 대해 미리 설정해둔다. 
 
+if a!=24 and a!=29:
     while a :
         if 1<=a<3:
              orbital.push('1s')
@@ -47,8 +52,10 @@ if a!=24 and a!=29:
             orbital.push('3d')
         if 31<=a<37:
             orbital.push('4p')
-        if a==0:
+        if b==0:
             break
-        a=a-1
+        b=b-1
+# 이온의 가수만큼 전자를 추가한다. 양이온에 대한 코드는 없는것이 단점이다. 
+
 while orbital.isEmpty() == False:
     print(orbital.pop())
